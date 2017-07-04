@@ -14,7 +14,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pgobjects.LoginPgObj;
-import utilities.BaseClass;
 import utilities.CommonUtils;
 
 public class DemoTest {
@@ -22,11 +21,10 @@ public class DemoTest {
 	public CommonUtils commonUtils;
 	public LoginPgObj loginPgObj;
 	public WebDriver driver = null;
-	final static Logger log = Logger.getLogger(BaseClass.class.getName());
+	final static Logger log = Logger.getLogger(DemoTest.class.getName());
 	
 	@cucumber.api.java.Before
 	public void includePageObjects() {
-		System.out.println("zzzzzzzzzzz");
 		driver = new FirefoxDriver();
 		loginPgObj = new LoginPgObj(driver);
 		commonUtils = new CommonUtils(driver);
